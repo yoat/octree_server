@@ -1,34 +1,30 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Oct -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Oct %></h1>
+</div>
 
-<p>
-  <strong>Player:</strong>
-  <%= @oct.player %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:hyper) %></dt>
+      <dd><pre class="prettyprint"><%= @oct.hyper %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:alpha) %></dt>
+      <dd><pre class="prettyprint"><%= @oct.alpha %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:color) %></dt>
+      <dd><pre class="prettyprint"><%= @oct.color %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:sign_sha1) %></dt>
+      <dd><pre class="prettyprint"><%= @oct.sign_sha1 %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Oct:</strong>
-  <%= @oct.oct %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              octs_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_oct_path(@oct), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              oct_path(@oct),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Hyper:</strong>
-  <%= @oct.hyper %>
-</p>
-
-<p>
-  <strong>Alpha:</strong>
-  <%= @oct.alpha %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @oct.color %>
-</p>
-
-<p>
-  <strong>Sign sha1:</strong>
-  <%= @oct.sign_sha1 %>
-</p>
-
-<%= link_to 'Edit', edit_oct_path(@oct) %> |
-<%= link_to 'Back', octs_path %>

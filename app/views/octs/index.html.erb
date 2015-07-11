@@ -1,35 +1,42 @@
-<h1>Listing octs</h1>
-
-<table>
+<%- model_class = Oct -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Oct %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Player</th>
-      <th>Oct</th>
-      <th>Hyper</th>
-      <th>Alpha</th>
-      <th>Color</th>
-      <th>Sign sha1</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:hyper) %></th>
+      <th><%= model_class.human_attribute_name(:alpha) %></th>
+      <th><%= model_class.human_attribute_name(:color) %></th>
+      <th><%= model_class.human_attribute_name(:sign_sha1) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @octs.each do |oct| %>
       <tr>
-        <td><%= oct.player %></td>
-        <td><%= oct.oct %></td>
+        <td><%= oct.id %></td>
         <td><%= oct.hyper %></td>
         <td><%= oct.alpha %></td>
         <td><%= oct.color %></td>
         <td><%= oct.sign_sha1 %></td>
-        <td><%= link_to 'Show', oct %></td>
-        <td><%= link_to 'Edit', edit_oct_path(oct) %></td>
-        <td><%= link_to 'Destroy', oct, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l oct.created_at, format: :long %></td>
+        <td>
+          <%= link_to oct_path(oct), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to oct_path(oct), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Oct', new_oct_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_oct_path,
+            :class => 'btn btn-primary' %>
