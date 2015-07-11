@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Player:</strong>
+  <%= @oct.player %>
+</p>
+
+<p>
+  <strong>Oct:</strong>
+  <%= @oct.oct %>
+</p>
+
+<p>
+  <strong>Hyper:</strong>
+  <%= @oct.hyper %>
+</p>
+
+<p>
+  <strong>Alpha:</strong>
+  <%= @oct.alpha %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @oct.color %>
+</p>
+
+<p>
+  <strong>Sign sha1:</strong>
+  <%= @oct.sign_sha1 %>
+</p>
+
+<%= link_to 'Edit', edit_oct_path(@oct) %> |
+<%= link_to 'Back', octs_path %>
