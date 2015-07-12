@@ -1,0 +1,88 @@
+                        Prefix Verb       URI Pattern                               Controller#Action
+                landings_index GET        /landings/index(.:format)                 landings#index
+                       players GET        /players(.:format)                        players#index
+                               POST       /players(.:format)                        players#create
+                    new_player GET        /players/new(.:format)                    players#new
+                   edit_player GET        /players/:id/edit(.:format)               players#edit
+                        player GET        /players/:id(.:format)                    players#show
+                               PATCH      /players/:id(.:format)                    players#update
+                               PUT        /players/:id(.:format)                    players#update
+                               DELETE     /players/:id(.:format)                    players#destroy
+                          octs GET        /octs(.:format)                           octs#index
+                               POST       /octs(.:format)                           octs#create
+                       new_oct GET        /octs/new(.:format)                       octs#new
+                      edit_oct GET        /octs/:id/edit(.:format)                  octs#edit
+                           oct GET        /octs/:id(.:format)                       octs#show
+                               PATCH      /octs/:id(.:format)                       octs#update
+                               PUT        /octs/:id(.:format)                       octs#update
+                               DELETE     /octs/:id(.:format)                       octs#destroy
+                       servers GET        /servers(.:format)                        servers#index
+                               POST       /servers(.:format)                        servers#create
+                    new_server GET        /servers/new(.:format)                    servers#new
+                   edit_server GET        /servers/:id/edit(.:format)               servers#edit
+                        server GET        /servers/:id(.:format)                    servers#show
+                               PATCH      /servers/:id(.:format)                    servers#update
+                               PUT        /servers/:id(.:format)                    servers#update
+                               DELETE     /servers/:id(.:format)                    servers#destroy
+                 user_password POST       /users/password(.:format)                 users/passwords#create
+             new_user_password GET        /users/password/new(.:format)             users/passwords#new
+            edit_user_password GET        /users/password/edit(.:format)            users/passwords#edit
+                               PATCH      /users/password(.:format)                 users/passwords#update
+                               PUT        /users/password(.:format)                 users/passwords#update
+        new_admin_user_session GET        /admin/login(.:format)                    active_admin/devise/sessions#new
+            admin_user_session POST       /admin/login(.:format)                    active_admin/devise/sessions#create
+    destroy_admin_user_session DELETE|GET /admin/logout(.:format)                   active_admin/devise/sessions#destroy
+           admin_user_password POST       /admin/password(.:format)                 active_admin/devise/passwords#create
+       new_admin_user_password GET        /admin/password/new(.:format)             active_admin/devise/passwords#new
+      edit_admin_user_password GET        /admin/password/edit(.:format)            active_admin/devise/passwords#edit
+                               PATCH      /admin/password(.:format)                 active_admin/devise/passwords#update
+                               PUT        /admin/password(.:format)                 active_admin/devise/passwords#update
+                    admin_root GET        /admin(.:format)                          admin/dashboard#index
+batch_action_admin_admin_users POST       /admin/admin_users/batch_action(.:format) admin/admin_users#batch_action
+             admin_admin_users GET        /admin/admin_users(.:format)              admin/admin_users#index
+                               POST       /admin/admin_users(.:format)              admin/admin_users#create
+          new_admin_admin_user GET        /admin/admin_users/new(.:format)          admin/admin_users#new
+         edit_admin_admin_user GET        /admin/admin_users/:id/edit(.:format)     admin/admin_users#edit
+              admin_admin_user GET        /admin/admin_users/:id(.:format)          admin/admin_users#show
+                               PATCH      /admin/admin_users/:id(.:format)          admin/admin_users#update
+                               PUT        /admin/admin_users/:id(.:format)          admin/admin_users#update
+                               DELETE     /admin/admin_users/:id(.:format)          admin/admin_users#destroy
+               admin_dashboard GET        /admin/dashboard(.:format)                admin/dashboard#index
+    batch_action_admin_players POST       /admin/players/batch_action(.:format)     admin/players#batch_action
+                 admin_players GET        /admin/players(.:format)                  admin/players#index
+                               POST       /admin/players(.:format)                  admin/players#create
+              new_admin_player GET        /admin/players/new(.:format)              admin/players#new
+             edit_admin_player GET        /admin/players/:id/edit(.:format)         admin/players#edit
+                  admin_player GET        /admin/players/:id(.:format)              admin/players#show
+                               PATCH      /admin/players/:id(.:format)              admin/players#update
+                               PUT        /admin/players/:id(.:format)              admin/players#update
+                               DELETE     /admin/players/:id(.:format)              admin/players#destroy
+    batch_action_admin_servers POST       /admin/servers/batch_action(.:format)     admin/servers#batch_action
+                 admin_servers GET        /admin/servers(.:format)                  admin/servers#index
+                               POST       /admin/servers(.:format)                  admin/servers#create
+              new_admin_server GET        /admin/servers/new(.:format)              admin/servers#new
+             edit_admin_server GET        /admin/servers/:id/edit(.:format)         admin/servers#edit
+                  admin_server GET        /admin/servers/:id(.:format)              admin/servers#show
+                               PATCH      /admin/servers/:id(.:format)              admin/servers#update
+                               PUT        /admin/servers/:id(.:format)              admin/servers#update
+                               DELETE     /admin/servers/:id(.:format)              admin/servers#destroy
+      batch_action_admin_users POST       /admin/users/batch_action(.:format)       admin/users#batch_action
+                   admin_users GET        /admin/users(.:format)                    admin/users#index
+                               POST       /admin/users(.:format)                    admin/users#create
+                new_admin_user GET        /admin/users/new(.:format)                admin/users#new
+               edit_admin_user GET        /admin/users/:id/edit(.:format)           admin/users#edit
+                    admin_user GET        /admin/users/:id(.:format)                admin/users#show
+                               PATCH      /admin/users/:id(.:format)                admin/users#update
+                               PUT        /admin/users/:id(.:format)                admin/users#update
+                               DELETE     /admin/users/:id(.:format)                admin/users#destroy
+          admin_admin_comments GET        /admin/admin_comments(.:format)           admin/admin_comments#index
+                               POST       /admin/admin_comments(.:format)           admin/admin_comments#create
+           admin_admin_comment GET        /admin/admin_comments/:id(.:format)       admin/admin_comments#show
+                          root GET        /                                         landings#index
+              new_user_session GET        /login(.:format)                          users/sessions#new
+                  user_session POST       /login(.:format)                          users/sessions#create
+          destroy_user_session DELETE     /signout(.:format)                        users/sessions#destroy
+         new_user_registration GET        /signup(.:format)                         users/registrations#new
+             user_registration POST       /signup(.:format)                         users/registrations#create
+      update_user_registration PUT        /signup(.:format)                         users/registrations#update
+        edit_user_registration GET        /account(.:format)                        users/registrations#edit
